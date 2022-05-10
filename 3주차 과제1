@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+void total(int(&bank)[4]) {//모든 은행 계좌의 종합을 구하여 메인함수 total_money변수에 저장
+	
+		int length{ sizeof(bank) / sizeof(bank[0]) };
+		int hap =0;
+		for (int i{0}; i <length ; ++i) {
+			hap = hap + bank[i];
+		}
+		cout << "현재 swing 자산 관리 서비스에 등록된 회원님의 총 자산은 " << hap << "원 입니다." << endl;
+
+}
+void myaccounts(int(& bank)[4], string(& bank_name)[4]) {// 함수 실핼 시 은행 계좌 별 금액 출력
+	cout << "--------은행 별 계좌정보--------" << endl;
+	int length1{ sizeof(bank) / sizeof(bank[0]) };
+	int length2{ sizeof(bank_name) / sizeof(bank_name[0]) };
+	for (int k{0}; k < length2; k++) {
+		cout << bank_name[k] << " | ";
+	}
+	cout << endl;
+	for (int i{0}; i < length1; i++) {
+		cout << bank[i] << " | ";
+	}
+	cout << "-------------------------------" << endl;
+}
+int main() {
+	string bank_name[4] = { "하나", "우리", "신한", "국민" };
+	int bank[4] = { 5000, 4000, 0, 10 };
+	cout << "*******swing 자산관리 서비스********" << endl;
+	myaccounts(bank, bank_name);
+	total(bank);
+	cout << "***********************************" << endl;
+
+}
