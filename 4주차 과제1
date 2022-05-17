@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+Box(int w, int h) {// 클래스에 void 안붙여도 되는 걸로 알고있는데 왜이렇게 오류가ㅏㅏ 아악
+	sq(int a)// 뭔지 하나도 모르겠어요 흐어어어ㅓ엉
+	ser
+public:
+	shape a;//....뭔 역할이지
+	shape b(10, 20);
+	shape c(3, 7, 4);
+}
+int main() {
+
+}
