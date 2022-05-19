@@ -1,13 +1,43 @@
 #include<iostream>
 using namespace std;
-Box(int w, int h) {// 클래스에 void 안붙여도 되는 걸로 알고있는데 왜이렇게 오류가ㅏㅏ 아악
-	sq(int a)// 뭔지 하나도 모르겠어요 흐어어어ㅓ엉
-	ser
+class Box {
+	//멤버변수
+	string x;
+	int width;
+	int height;
+	
+
 public:
-	shape a;//....뭔 역할이지
-	shape b(10, 20);
-	shape c(3, 7, 4);
+	Box(int w, int h) {
+		width = w;
+		height = h;
+		x = '*';
+	}
+	void set_char_change(char a) {
+		x = a;
+	}
+	void set_size_Change(int w, int h) {
+		width = w;
+		height = h;
+	}
+	string print();
+
+};
+
+string Box::print() {
+	for (int i = 0; i < width ; i++) {
+		for (int h = 0; h < height; h++) {
+			cout << x;
+		}
+		cout << endl;
+	}
+	cout << endl;
+	return x;
 }
 int main() {
-
+	Box box1(3, 4);
+	box1.print();
+	Box box2(6,10);
+	box2.set_char_change('^');
+	box2.print();
 }
