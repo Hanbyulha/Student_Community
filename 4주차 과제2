@@ -45,15 +45,18 @@ figure::~figure() {
 }
 double figure::AreaOval() {
     double Oval = width1 * width2 * 3.14;
+    cout << "타원의 넓이는" << Oval << "이다" << endl;
     return Oval;
 }
 
 int figure::AreaLadder() {
     int Ladder = (width1 + width2) * height / 2;
+    cout << "사다리꼴의 넓이는" << Ladder << "이다" << endl;
     return Ladder;
 }
 int figure::AreaRect() {
     int Rect = width1 * width2;
+    cout << "사각형의 넓이는" << Rect << "이다" << endl;
     return Rect;
 }
 
@@ -84,18 +87,15 @@ int main(void)
 {
     //객체1 만들지 타원
     figure figure1(5.0, 1.0, "CircleA");
-    figure1.setTwo(5.0, 1.0);
-    cout << "타원의 넓이는" << figure1.AreaOval() << "이다" << endl;
-    figure1.getB();
+    figure1.AreaOval();
+
     //객체2 사각형
     figure figure2(10.0, 20.0, "Rectabgular");
-    figure2.setTwo(10.0, 20.0);
-    cout << "사각형의 넓이는" << figure2.AreaRect() << "이다" << endl;
+    figure2.AreaRect();
 
     //객체3 사다리꼴
-    figure figure3(2, 3, 4, "Ladder");
-    figure3.setThree(6, 6, 4);
-    cout << "사다리꼴의 넓이는" << figure3.AreaLadder() << "이다" << endl;
+    figure figure3(6, 6, 4, "Ladder");
+    figure3.AreaLadder();
     figure3.setThree(5, 10, 6);
-    cout << "사다리꼴의 넓이는" << figure3.AreaLadder() << "이다" << endl;
+    figure3.AreaLadder();
 }
