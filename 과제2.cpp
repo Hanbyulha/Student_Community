@@ -1,155 +1,171 @@
 #include <iostream>
+#include <string>
 using namespace std;
-int start;
-string Name;
-string Id;
-string Password;
-int i = 0;
-int my=0;
+
+
+string list[3][2] = { {"1. ","1"},{"2. ","1"} , {"3. ","1"} };
 //new연산자 사용, 객체 포인터 사용
 class Member {
-	string Name;
-	string Id;
-	string wd;
+    int start;
+    string Name;
+    string Id;
+    string Password;
 public:
-	string getName();//Name값 리턴
-	string getId();//Id값 리턴
-	string getPassword();//Password값 리턴
-	void setName(string name);//이름 입력받은
-	void setId(string id);//아이디 입력받음
-	void setPassword(string ps);//패스워드 입력받음
+    string getName();//Name값 리턴
+    string getId();//Id값 리턴
+    string getPassword();//Password값 리턴
+    string setName(string name);//이름 입력받은
+    string setId(string id);//아이디 입력받음
+    string setPassword(string ps);//패스워드 입력받음
 };
 string Member::getName() {
-	return Name;
+    return Name;
 }
 string Member::getPassword() {
-	return Password;
+    return Password;
 }
 string Member::getId() {
-	return Id;
+    return Id;
 }
-void Member::setName(string name) {
-	Name= name;
-	return Name;
+string Member::setName(string name) {
+    Name = name;
+    return Name;
+
 }
-void Member::setId(string id) {
-	Id = id;
-	return Id;
+string Member::setId(string id) {
+    Id = id;
+    return Id;
 }
-void Member::setPassword(string ps) {
-	Password = ps;
-	return Password;
+string Member::setPassword(string ps) {
+    Password = ps;
+    return Password;
 }
 class Cart {
 public:
-	void bag_course();//2번 강의 담기 기능함수
-	void put_bag();//3번 수강신청확인 기능합수
-	void print(int g);//1번 장바구니 기능 함수, 강의 목록을 배열로 받아서 출력
+    void bag_course();//2번 강의 담기 기능함수
+    void put_bag();//3번 수강신청확인 기능합수
+    void print(int g);//1번 장바구니 기능 함수, 강의 목록을 배열로 받아서 출력
 };
 
 void Cart::bag_course() {
-	string a
-	string* printt = new string[3];
-	delete[] printt;
-	for (int g; g < 3; g++) {
-		cout << "추가할 학수 번호 >> ";
-		cin >> a;
-		string a1, a2 = 0;
-		if (a1 != a && a2 != a && a == "0001") {
-			printt[g] = Cart put_bag(0);
-		}
-		else if (a1 != a && a2 != a && a == "0002") {
-			printt[g] = Cart put_bag(1);
-		}
-		else if (a1 != a && a2 != a && a == "0003") {
-			printt[g] = Cart put_bag(2);
-		}
-		else {
-			continue;
-		}
-		a1 = a;
-		a2 = a1;
-	}
+    //for (int g; g < 3; g++) {
+    cout << "추가할 학수 번호 >> ";
+    string a, a1, a2 = 0;
+    cin >> a;
+    if (a1 != a && a2 != a && a == "0001") {
+        list[1][2] = "c++프로그래밍";
+    }
+    else if (a1 != a && a2 != a && a == "0002") {
+        list[2][2] = "linux 프로그래밍";
+    }
+    else if (a1 != a && a2 != a && a == "0003") {
+        list[3][2] = "리버싱";
+    }
+    else if (a1 == a && a2 == a) {
+        cout << "이미 MY 장바구니에 담겨져 있습니다." << endl;
+
+    }
+    else {
+        cout << endl;
+    }
+    a1 = a;
+    a2 = a1;
+
 }
-		
+
 void Cart::put_bag() {
-	for (int g; g < 3; g++) {
-		cout << g << "." << printt[g];
-	}
-	
+    for (int g = 0; g < 3; g++) {
+        cout << list[g][1] << list[g][2] << endl;
+    }
+
 }
 void Cart::print(int g) {
-	string* printt1 = new string[3];
-	delete[] printt1;
-	printt1[0] = "[1]c++프로그래밍";
-	printt1[1] = "[2]linux 프로그래밍";
-	printt1[2] = "[3]리버싱";
-	cout << printt1[g];
+    string* printt1 = new string[3];
+    delete[] printt1;
+    printt1[0] = "[1]c++프로그래밍 >> 0001";
+    printt1[1] = "[2]linux 프로그래밍 >> 0002";
+    printt1[2] = "[3]리버싱 >> 0003";
+    cout << printt1[g];
 }
 
+
 int main() {
-	for (;;) {
-		cout << "---------------- 서울여자대학교 종합정보시스템 ----------------" << endl;
-		cout << "1. 회원가입\n" << "2. 로그인\n\n" << "번호를 입력하세요 >> ";
-		cin >> start;;
-		cout << "---------------------------------------------------------------" << endl;
-		if (start == 1) {
-			Member* p;
-			string* n = new string[5];
-			delete[] n;
-			string* I = new string[5];
-			delete[] I;
-			string* P = new string[5];
-			delete[] P;
-			cout << "이름: ";
-			cin >> Name;
-			*n =p-> Member.setName(Name);
-			cout << "아이디: ";
-			cin >> Id;
-			*I = p->Member.setId(Id);
-			cout << "비밀번호: ";
-			cin >> Password;
-			*P= p->Member.setPassword(Password);
-			cout << "\n=== 회원가입 성공 ===" << endl;
-			i = ++i;
-		}
-		else if (start == 2) {
-			cout << "아이디: ";
-			cin >> Id;
-			cout << "비밀번호: ";
-			cin >> Password;
+    int start;
+    int i = 0;
+    string Name;
+    string Id;
+    string Password;
+    Member Member1;
+    Member* p = &Member1;
 
-			for (int k = i; k < 0; i--) {
-				if (n[k] == Id && P[k] == Password) {
-					Name == n[k];
-					cout << "== 로그인 성공 ==" << endl;
-					cout << Name << "님 환영합니다." << endl;
-					while ( start != 4) {
-						cout << "=================\n" << "1. 장바구니\n" << "2. 강의 담기\n" << "3. 수강신청 확인\n" << "4.로그아웃\n" << "번호를 입력하세요: ";
-						cin >> start;
-						if (start == 1) {
-							cout << "\n======= 강의목록 ========";
-							Cart print();
-						}
-						else if (start == 2) {
-							Cart bag_course();
-						}
-						else if (start == 3) {
-							for (int k; k < 3; k++) {
-								Cart put_bag(k);
-								cout << "<< 000" << k + 1<< endl;
-							}
-							
-						}
-					}
-				}
-				else
-					cout << "아이디 혹은 비밀번호가 틀렸습니다." << endl;
-			}
+    string* N = new string;
+    string* I = new string;
+    string* P = new string;
 
-		}
-		else {
-			cout << "1 또는 2만 입력해주세요" << endl;
-		}
-	}
+    while (1) {
+        cout << "---------------- 서울여자대학교 종합정보시스템 ----------------" << endl;
+        cout << "1. 회원가입\n" << "2. 로그인\n\n" << "번호를 입력하세요 >> ";
+        cin >> start;
+        cout << "---------------------------------------------------------------" << endl;
+        if (start == 1) {
+
+
+            cout << "이름: ";
+            cin >> Name;
+            *N = p->setName(Name);
+            cout << "아이디: ";
+            cin >> Id;
+            *I = p->setId(Id);
+            cout << "비밀번호: ";
+            cin >> Password;
+            *P = p->setPassword(Password);
+            cout << "\n=== 회원가입 성공 ===" << endl;
+            ++i;
+
+        }
+        else if (start == 2) {
+            cout << "아이디: ";
+            cin >> Id;
+            cout << "비밀번호: ";
+            cin >> Password;
+
+            while (1) {
+                if (*I == Id && *P == Password) {
+                    Name == *N;
+                    cout << "== 로그인 성공 ==" << endl;
+                    cout << Name << "님 환영합니다." << endl;
+                    switch(start)
+                    {
+                        cout << "=================\n" << "1. 장바구니\n" << "2. 강의 담기\n" << "3. 수강신청 확인\n" << "4.로그아웃\n" << "번호를 입력하세요: ";
+                        cin >> start;
+                        case start == 1:
+                            cout << "\n======= 강의목록 ========";
+                            Cart print();
+                            break;
+                        case start == 2:
+                            Cart bag_course();
+                            break;
+                        case start == 3:
+                            Cart put_bag();
+                            break;
+                        case start == 4:
+                            break;
+                        default:
+                            continue;
+                        
+                    }
+                }
+                else
+                    cout << "아이디 혹은 비밀번호가 틀렸습니다." << endl;
+            }
+
+        }
+        else {
+            cout << "1 또는 2만 입력해주세요" << endl;
+        }
+
+    }
+    delete N;
+    delete I;
+    delete P;
 }
