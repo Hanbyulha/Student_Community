@@ -5,15 +5,15 @@ using namespace std;
 
 int main(void)
 {
-    //°´Ã¼1 ¸¸µéÁö Å¸¿ø
+    //ê°ì²´1 ë§Œë“¤ì§€ íƒ€ì›
     figure figure1(5.0, 1.0, "CircleA");
     figure1.AreaOval();
 
-    //°´Ã¼2 »ç°¢Çü
+    //ê°ì²´2 ì‚¬ê°í˜•
     figure figure2(10.0, 20.0, "Rectabgular");
     figure2.AreaRect();
 
-    //°´Ã¼3 »ç´Ù¸®²Ã
+    //ê°ì²´3 ì‚¬ë‹¤ë¦¬ê¼´
     figure figure3(6, 6, 4, "Ladder");
     figure3.AreaLadder();
     figure3.setThree(5, 10, 6);
