@@ -3,22 +3,22 @@ using namespace std;
 #include "Class.h"
 class figure {
     figure::~figure() {
-        cout << "¼Ò¸êÀÚ" << a << "Å¬·¡½º" << endl;
+        cout << "ì†Œë©¸ìž" << a << "í´ëž˜ìŠ¤" << endl;
     }
     double figure::AreaOval() {
         double Oval = width1 * width2 * 3.14;
-        cout << "Å¸¿øÀÇ ³ÐÀÌ´Â" << Oval << "ÀÌ´Ù" << endl;
+        cout << "íƒ€ì›ì˜ ë„“ì´ëŠ”" << Oval << "ì´ë‹¤" << endl;
         return Oval;
     }
 
     int figure::AreaLadder() {
         int Ladder = (width1 + width2) * height / 2;
-        cout << "»ç´Ù¸®²ÃÀÇ ³ÐÀÌ´Â" << Ladder << "ÀÌ´Ù" << endl;
+        cout << "ì‚¬ë‹¤ë¦¬ê¼´ì˜ ë„“ì´ëŠ”" << Ladder << "ì´ë‹¤" << endl;
         return Ladder;
     }
     int figure::AreaRect() {
         int Rect = width1 * width2;
-        cout << "»ç°¢ÇüÀÇ ³ÐÀÌ´Â" << Rect << "ÀÌ´Ù" << endl;
+        cout << "ì‚¬ê°í˜•ì˜ ë„“ì´ëŠ”" << Rect << "ì´ë‹¤" << endl;
         return Rect;
     }
 
