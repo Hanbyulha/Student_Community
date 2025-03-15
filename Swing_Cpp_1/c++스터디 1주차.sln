@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int cola;
+	int water;
+	int fanta;
+	int count;
+	int sum;
+	cout << "당신의 이름은 무엇입니까? \n";
+	char name0[11];//name에 12바이트를 주겠다란 뜻
+	cin.getline(name0, 11, '\n'); //(char의 배열명, 문자열 크기)
+	cout << "반갑습니다. " << name0 << "님\n";
+	cout << "----------SWING 30----------\n";
+	cout << "음료의 가격 입력을 시작합니다.\n";
+	std::cout << "콜라의 가격 : ";
+	std::cin >> cola;
+	std::cout << "삼다수의 가격 : ";
+	std::cin >> water;
+	std::cout << "환타의 가격 : ";
+	std::cin >> fanta;
+
+	cout << "\n개수를 입력해주세요.";
+	std::cout << "\n콜라 수량 : ";
+	std::cin >> count;
+	cola *= count;// 변수를 줄이기 위해 cloa에 입력받은 가격과 수량을 바로 곱함 
+	std::cout << "삼다수 수량 : ";
+	std::cin >> count;
+	water *= count;// water= water*count
+	std::cout << "환타 수량 : ";
+	std::cin >> count;
+	fanta *= count;
+	sum = (cola + water + fanta) - 500;//콜라와 물과 환타의 가격을 모두 더하고 500원 할인을 해줬다.
+	cout << "----------------------------\n";
+	cout << "500원을 할인받아 총" << sum << "원 입니다.";
+}
