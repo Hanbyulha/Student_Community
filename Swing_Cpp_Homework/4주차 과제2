@@ -1,0 +1,101 @@
+#include <iostream>
+using namespace std;
+
+class figure {
+    //멤버변수
+    double width1;
+    double width2;
+    int height;
+    string a;
+public:
+    //생성자
+    figure(double w1, double w2, string a1) { // 타원 // 사각형
+        width1 = w1;
+        width2 = w2;
+        a = a1;
+    }
+    figure(int w1, int w2, int h, string a1) { // 사다리꼴
+        width1 = w1;
+        width2 = w2;
+        height = h;
+        a = a1;
+    }
+
+    //멤버함수
+    // 길이를 반환 함수
+    double getA(); // width1 
+    double getB(); // width2
+    int getC(); // height
+
+    //넓이를 구하는 함수
+    double AreaOval();
+    int AreaLadder();
+    int AreaRect();
+
+    //멤버변수를 수정해주는 값
+    void setTwo(int a, int b); //width1, width2 설정
+    void setThree(int a, int b, int c); // width1, width2, height 설정
+
+    //소멸자
+    ~figure();
+};
+
+figure::~figure() {
+    cout << "소멸자" << a << "클래스" << endl;
+}
+double figure::AreaOval() {
+    double Oval = width1 * width2 * 3.14;
+    cout << "타원의 넓이는" << Oval << "이다" << endl;
+    return Oval;
+}
+
+int figure::AreaLadder() {
+    int Ladder = (width1 + width2) * height / 2;
+    cout << "사다리꼴의 넓이는" << Ladder << "이다" << endl;
+    return Ladder;
+}
+int figure::AreaRect() {
+    int Rect = width1 * width2;
+    cout << "사각형의 넓이는" << Rect << "이다" << endl;
+    return Rect;
+}
+
+void figure::setTwo(int a, int b) {
+    width1 = a;
+    width2 = b;
+}
+
+double figure::getA() {
+    return width1;
+}
+
+double figure::getB() {
+    return width2;
+}
+
+int figure::getC() {
+    return height;
+}
+
+
+void figure::setThree(int a, int b, int c) {
+    width1 = a;
+    width2 = b;
+    height = c;
+}
+int main(void)
+{
+    //객체1 만들지 타원
+    figure figure1(5.0, 1.0, "CircleA");
+    figure1.AreaOval();
+
+    //객체2 사각형
+    figure figure2(10.0, 20.0, "Rectabgular");
+    figure2.AreaRect();
+
+    //객체3 사다리꼴
+    figure figure3(6, 6, 4, "Ladder");
+    figure3.AreaLadder();
+    figure3.setThree(5, 10, 6);
+    figure3.AreaLadder();
+}

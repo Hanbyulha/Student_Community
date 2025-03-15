@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+class Box {
+	//멤버변수
+	string x;
+	int width;
+	int height;
+	
+
+public:
+	Box(int w, int h) {
+		width = w;
+		height = h;
+		x = '*';
+	}
+	void set_char_change(char a) {
+		x = a;
+	}
+	void set_size_Change(int w, int h) {
+		width = w;
+		height = h;
+	}
+	string print();
+
+};
+
+string Box::print() {
+	for (int i = 0; i < width ; i++) {
+		for (int h = 0; h < height; h++) {
+			cout << x;
+		}
+		cout << endl;
+	}
+	cout << endl;
+	return x;
+}
+int main() {
+	Box box1(3, 4);
+	box1.print();
+	Box box2(6,10);
+	box2.set_char_change('^');
+	box2.print();
+}
